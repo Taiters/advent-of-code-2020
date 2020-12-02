@@ -17,11 +17,13 @@ def solve(entries):
             return entry * result
 
 
-if __name__ == '__main__':
-    entries = []
+def get_input():
     with open('input.txt', 'r') as f:
         for line in f:
-            entries.append(int(line))
+            yield int(line)
 
+
+if __name__ == '__main__':
+    entries = list(get_input())
     result = solve(entries)
     print(result)
