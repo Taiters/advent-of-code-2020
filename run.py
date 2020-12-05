@@ -11,4 +11,4 @@ if __name__ == '__main__':
     day = int(sys.argv[1])
     module = __import__(f'day{day}')
     result = module.solve(get_input(day))
-    print(f'Day {day} result: {result}')
+    print(result)
