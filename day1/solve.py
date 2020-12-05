@@ -10,20 +10,9 @@ def solve_for_two(entries, i, total):
         seen.add(entry)
 
 
-def solve(entries):
+def solve(input):
+    entries = [int(line) for line in input]
     for i, entry in enumerate(entries):
         result = solve_for_two(entries, i+1, 2020-entry)
         if result:
             return entry * result
-
-
-def get_input():
-    with open('input.txt', 'r') as f:
-        for line in f:
-            yield int(line)
-
-
-if __name__ == '__main__':
-    entries = list(get_input())
-    result = solve(entries)
-    print(result)
